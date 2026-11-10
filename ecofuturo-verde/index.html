@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoFuturo Verde - Transformando Nosso Planeta</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- CSS Customizado -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVEGAÇÃO / HEADER -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
+        <i class="bi bi-tree-fill text-warning fs-3"></i> EcoFuturo Verde
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-menu navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#impacto">Impacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          <!-- Botão Modo Escuro -->
+          <li class="nav-item ms-lg-3">
+            <button class="btn btn-outline-light rounded-circle border-2 p-2 d-flex align-items-center justify-content-center" id="themeToggle" style="width: 40px; height: 40px;" aria-label="Alternar Tema">
+              <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SEÇÃO HERO -->
+  <section id="hero" class="hero-section text-white text-center d-flex align-items-center justify-content-center">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative z-1 py-5">
+      <span class="badge bg-warning text-dark fs-6 mb-3 px-3 py-2 rounded-pill shadow-sm">Iniciativa Comunitária & Sustentável</span>
+      <h1 class="display-3 fw-bold mb-3">Reflorestando o Amanhã, Hoje</h1>
+      <p class="lead mb-4 mx-auto style-max-width">Transformamos espaços urbanos e degradados em áreas verdes sustentáveis através do plantio comunitário e educação ambiental.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#contato" class="btn btn-warning btn-lg px-4 fw-bold text-dark shadow">Quero Ser Voluntário</a>
+        <a href="#projetos" class="btn btn-outline-light btn-lg px-4 fw-bold">Conhecer Projetos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NÓS -->
+  <section id="sobre" class="py-5">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" alt="Plantio de árvores comunitário" class="img-fluid rounded-4 shadow-lg">
+        </div>
+        <div class="col-lg-6">
+          <span class="text-success fw-bold text-uppercase tracking-wider">Quem Somos</span>
+          <h2 class="display-6 fw-bold mb-3">Preservando o futuro com as próprias mãos</h2>
+          <p class="text-secondary fs-5">A <strong>EcoFuturo Verde</strong> é uma organização sem fins lucrativos dedicada à restauração ecológica e à conscientização ambiental em comunidades locais.</p>
+          <div class="row g-3 mt-2">
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-3 p-3 bg-body-tertiary rounded-3 shadow-sm border">
+                <i class="bi bi-flower1 text-success fs-1"></i>
+                <div>
+                  <h6 class="mb-0 fw-bold">100% Ecológico</h6>
+                  <small class="text-muted">Espécies nativas protegidas</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-3 p-3 bg-body-tertiary rounded-3 shadow-sm border">
+                <i class="bi bi-people-fill text-success fs-1"></i>
+                <div>
+                  <h6 class="mb-0 fw-bold">Engajamento Social</h6>
+                  <small class="text-muted">Comunidade ativa e forte</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS E SERVIÇOS (COM CARDS BOOTSTRAP E FILTRO JS) -->
+  <section id="projetos" class="py-5 bg-body-tertiary">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="text-success fw-bold text-uppercase">Nossas Frentes</span>
+        <h2 class="display-6 fw-bold">Projetos em Destaque</h2>
+        <!-- Filtro Dinâmico em JS -->
+        <div class="btn-group mt-3 flex-wrap" role="group" id="filter-buttons">
+          <button type="button" class="btn btn-outline-success active" data-filter="all">Todos</button>
+          <button type="button" class="btn btn-outline-success" data-filter="urban">Urbano</button>
+          <button type="button" class="btn btn-outline-success" data-filter="education">Educação</button>
+          <button type="button" class="btn btn-outline-success" data-filter="forest">Florestal</button>
+        </div>
+      </div>
+
+      <div class="row g-4" id="projects-grid">
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="urban">
+          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover">
+            <img src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Horta Comunitária">
+            <div class="card-body d-flex flex-column p-4">
+              <span class="badge bg-success-subtle text-success border border-success-subtle mb-2 w-fit">Urbano</span>
+              <h5 class="card-title fw-bold">Hortas Urbanas Sustentáveis</h5>
+              <p class="card-text text-secondary flex-grow-1">Criação de hortas comunitárias orgânicas em terrenos ociosos da cidade para segurança alimentar local.</p>
+              <button class="btn btn-outline-success w-100 fw-semibold rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#modalProject1">Saber mais</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="forest">
+          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover">
+            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Reflorestamento">
+            <div class="card-body d-flex flex-column p-4">
+              <span class="badge bg-success-subtle text-success border border-success-subtle mb-2 w-fit">Florestal</span>
+              <h5 class="card-title fw-bold">Refloresta Nascentes</h5>
+              <p class="card-text text-secondary flex-grow-1">Plantio de muda nativa ao redor de nascentes e matas ciliares degradadas para recuperação hídrica.</p>
+              <button class="btn btn-outline-success w-100 fw-semibold rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#modalProject2">Saber mais</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="education">
+          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover">
+            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Escola Verde">
+            <div class="card-body d-flex flex-column p-4">
+              <span class="badge bg-success-subtle text-success border border-success-subtle mb-2 w-fit">Educação</span>
+              <h5 class="card-title fw-bold">Escola Verde & Consciente</h5>
+              <p class="card-text text-secondary flex-grow-1">Workshops e palestras dinâmicas para alunos de escolas públicas sobre compostagem e reciclagem.</p>
+              <button class="btn btn-outline-success w-100 fw-semibold rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#modalProject3">Saber mais</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO INTERATIVA / CONTADORES DE IMPACTO (JS OBSERVATION) -->
+  <section id="impacto" class="py-5 bg-success text-white">
+    <div class="container py-4">
+      <div class="row text-center g-4">
+        <div class="col-6 col-md-3">
+          <i class="bi bi-tree fs-1 text-warning"></i>
+          <h2 class="display-5 fw-bold mt-2 mb-0 counter" data-target="15400">0</h2>
+          <p class="fs-6 opacity-75">Árvores Plantadas</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="bi bi-people fs-1 text-warning"></i>
+          <h2 class="display-5 fw-bold mt-2 mb-0 counter" data-target="3200">0</h2>
+          <p class="fs-6 opacity-75">Voluntários Ativos</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="bi bi-droplet-half fs-1 text-warning"></i>
+          <h2 class="display-5 fw-bold mt-2 mb-0 counter" data-target="48">0</h2>
+          <p class="fs-6 opacity-75">Nascentes Protegidas</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="bi bi-building-check fs-1 text-warning"></i>
+          <h2 class="display-5 fw-bold mt-2 mb-0 counter" data-target="120">0</h2>
+          <p class="fs-6 opacity-75">Hortas Urbanas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (ACCORDION BOOTSTRAP) -->
+  <section id="faq" class="py-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="text-success fw-bold text-uppercase">Tire Suas Dúvidas</span>
+        <h2 class="display-6 fw-bold">Perguntas Frequentes</h2>
+      </div>
+      <div class="accordion max-w-700 mx-auto shadow-sm rounded-4 overflow-hidden" id="accordionFAQ">
+        <div class="accordion-item border-0 border-bottom">
+          <h2 class="accordion-header">
+            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              Como posso me tornar um voluntário?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+            <div class="accordion-body text-secondary">
+              Basta preencher o formulário de contato ao final da página selecionando o assunto "Quero ser Voluntário". Nossa equipe entrará em contato via e-mail ou WhatsApp informando as datas dos próximos plantios comunitários.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item border-0 border-bottom">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              Preciso pagar alguma taxa para participar?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+            <div class="accordion-body text-secondary">
+              Não! Todos os nossos eventos comunitários e mutirões de plantio são gratuitos. Fornecemos ferramentas, mudas e suporte técnico local.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item border-0">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              Posso doar mudas ou materiais de jardinagem?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+            <div class="accordion-body text-secondary">
+              Com certeza! Aceitamos doações de mudas nativas da Mata Atlântica/Cerrado, pás, adubo orgânico e luvas de proteção. Envie uma mensagem pelo formulário para combinarmos a retirada.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO & RODAPÉ -->
+  <section id="contato" class="py-5 bg-body-tertiary">
+    <div class="container py-4">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <span class="text-success fw-bold text-uppercase">Fale Conosco</span>
+          <h2 class="display-6 fw-bold mb-4">Envie uma Mensagem</h2>
+          <p class="text-secondary mb-4">Tem alguma dúvida, proposta de parceria ou deseja se juntar a nós? Preencha o formulário e responderemos o mais breve possível.</p>
+          
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="bg-success text-white p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+              <i class="bi bi-geo-alt-fill fs-5"></i>
+            </div>
+            <div>
+              <h6 class="mb-0 fw-bold">Endereço</h6>
+              <small class="text-secondary">Av. Paulista, 1000 - São Paulo, SP</small>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="bg-success text-white p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+              <i class="bi bi-envelope-fill fs-5"></i>
+            </div>
+            <div>
+              <h6 class="mb-0 fw-bold">E-mail</h6>
+              <small class="text-secondary">contato@ecofuturoverde.org</small>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <div class="bg-success text-white p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+              <i class="bi bi-telephone-fill fs-5"></i>
+            </div>
+            <div>
+              <h6 class="mb-0 fw-bold">Telefone</h6>
+              <small class="text-secondary">(11) 98765-4321</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-lg p-4 rounded-4">
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label fw-semibold">Nome Completo *</label>
+                  <input type="text" class="form-field form-control form-control-lg fs-6" id="name" placeholder="Seu nome" required>
+                  <div class="invalid-feedback">Por favor, informe seu nome (mínimo 3 caracteres).</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email" class="form-label fw-semibold">E-mail *</label>
+                  <input type="email" class="form-field form-control form-control-lg fs-6" id="email" placeholder="seuemail@exemplo.com" required>
+                  <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
+                </div>
+
+                <div class="col-12">
+                  <label for="subject" class="form-label fw-semibold">Assunto *</label>
+                  <select class="form-select form-control-lg fs-6" id="subject" required>
+                    <option value="" selected disabled>Selecione uma opção...</option>
+                    <option value="voluntario">Quero ser Voluntário</option>
+                    <option value="parceria">Parceria / Empresa</option>
+                    <option value="doacao">Doação de Mudas</option>
+                    <option value="outros">Outros Assuntos</option>
+                  </select>
+                  <div class="invalid-feedback">Por favor, escolha um assunto.</div>
+                </div>
+
+                <div class="col-12">
+                  <label for="message" class="form-label fw-semibold">Mensagem *</label>
+                  <textarea class="form-control fs-6" id="message" rows="4" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                  <div class="invalid-feedback">A mensagem precisa ter pelo menos 10 caracteres.</div>
+                </div>
+
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-success btn-lg w-100 fw-bold shadow-sm" id="btnSubmit">
+                    <span id="btnText"><i class="bi bi-send-fill me-2"></i>Enviar Mensagem</span>
+                    <span id="btnSpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-dark text-white py-4 border-top border-secondary">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
+      <div>
+        <span class="fw-bold fs-5 text-success"><i class="bi bi-tree-fill"></i> EcoFuturo Verde</span>
+        <p class="small text-secondary mb-0">&copy; 2026 Todos os direitos reservados. Projeto acadêmico de Front-End.</p>
+      </div>
+      <div class="d-flex gap-3">
+        <a href="#" class="btn btn-outline-light btn-sm rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="btn btn-outline-light btn-sm rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="btn btn-outline-light btn-sm rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAIS DE PROJETOS -->
+  <div class="modal fade" id="modalProject1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title fw-bold">Hortas Urbanas Sustentáveis</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-secondary">
+          <p>Muitas comunidades urbanas não têm acesso a alimentos frescos e de alta qualidade. Nosso projeto mapeia terrenos públicos ociosos, realiza a análise de solo e capacita moradores locais para cultivar alimentos orgânicos livres de agrotóxicos.</p>
+          <p class="mb-0"><strong>Resultados:</strong> Mais de 120 hortas ativas abastecendo famílias locais semanalmente.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalProject2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title fw-bold">Refloresta Nascentes</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-secondary">
+          <p>Proteger a água é proteger a vida. O projeto atua em áreas rurais e de proteção ambiental, recuperando a vegetação nativa das margens de rios e nascentes para evitar a erosão e a contaminação hídrica.</p>
+          <p class="mb-0"><strong>Resultados:</strong> Mais de 15.000 árvores nativas plantadas e 48 nascentes recuperadas.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalProject3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title fw-bold">Escola Verde & Consciente</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-secondary">
+          <p>O futuro depende da conscientização das novas gerações. Promovemos oficinas práticas de compostagem doméstica, separação correta de resíduos recicláveis e hortas escolares pedagógicas.</p>
+          <p class="mb-0"><strong>Resultados:</strong> Mais de 40 escolas impactadas e 5.000 alunos capacitados.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST DE CONFIRMAÇÃO DO FORMULÁRIO -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="formToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body d-flex align-items-center gap-2">
+          <i class="bi bi-check-circle-fill fs-4"></i>
+          <div>
+            <strong>Mensagem enviada com sucesso!</strong><br>
+            <small>Obrigado pelo contato. Responderemos em breve.</small>
+          </div>
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle (com Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS Customizado -->
+  <script src="js/main.js"></script>
+</body>
+</html>
